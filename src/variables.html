@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="resultado">
+        
+    </div>
+
+    <script type="text/javascript">
+        console.log("Esto es un mensaje para la terminal");
+        const edad = prompt("¿Cuantos años tienes? ");
+        const realizarPago = confirm('¿Estas segura de que quieres realizar el pago?');
+        const nuevaEdad = parseInt(edad);
+        const nacimiento = 2021 - edad;
+
+        const dia = "miercoles";
+        const pais = "Argentina";
+
+        // getElementById
+        const resultado = document.getElementById("resultado");
+        resultado.innerHTML = `Hoy es <b>${dia}</b> y naciste en el año ${nacimiento} y estas viendo esto desde ${pais}`;
+
+
+    </script>
+</body>
+</html>
