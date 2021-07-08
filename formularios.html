@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Formularios</h1>
+
+    <form name="form" action="" method="POST">
+        <label for="nombre">
+            <span>Nombre</span>
+            <input type="text" name="nombre" id="nombre" value="" placeholder="Introduzca Nombre">
+        </label>
+        <br><br>
+        <label for="apellido">
+            <span>Apellido</span>
+            <input type="text" name="apellido" id="apellido" value="" placeholder="Introduzca Apellido">
+        </label>
+        <br><br>
+        <label for="email">
+            <span>Email</span>
+            <input type="email" name="email" id="email" value="" placeholder="Correo Electronico">
+        </label>
+        <br><br>
+        <label for="edad">
+            <span>Edad</span>
+            <input type="number" name="edad" id="edad" value="" placeholder="Introduzca Edad">
+        </label>
+        <br><br>
+        <label for="paises">
+            <span>Paises</span>
+            <select name="paises" id="paises">
+                <option value="argentina">Argentina</option>
+                <option value="brasil">Brasil</option>
+                <option value="chile">Chile</option>
+                <option value="colombia">Colombia</option>
+                <option value="peru">Perú</option>
+                <option value="venezuela">Venezuela</option>
+            </select>
+        </label>
+        <br><br>
+        <label for="sexo"><span>Sexo</span></label>
+        <br>
+        <label for="sexo1">Masculino</label>
+        <input type="radio" name="sexo" id="sexo1" value="masculino">
+        <br>
+        <label for="sexo2">Femenino</label>
+        <input type="radio" name="sexo" id="sexo2" value="femenino">
+        <br>
+        <label for="sexo3">Prefiero no decirlo</label>
+        <input type="radio" name="sexo" id="sexo3" value="no_contesta">
+        <!-- el name indica que pertenecen al mismo radio button -->
+
+        <br><br>
+        <span>Hobbies</span>
+        <br><br>
+        <label for="hobbies1">Fútbol</label>
+        <input type="checkbox" name="hobbies[]" id="hobbies1" value="futbol">
+
+        <label for="hobbies2">Basquet</label>
+        <input type="checkbox" name="hobbies[]" id="hobbies2" value="basquet">
+
+        <label for="hobbies3">Tenis</label>
+        <input type="checkbox" name="hobbies[]" id="hobbies3" value="tenis">
+        
+        <label for="hobbies4">Beisbol</label>
+        <input type="checkbox" name="hobbies[]" id="hobbies4" value="beisbol">
+
+        <label for="hobbies5">Otro</label>
+        <input type="checkbox" name="hobbies[]" id="hobbies5" value="otro">
+
+        <br><br> 
+
+        <!-- text area -->
+        <label for="comentario">
+            <span>Comentario</span>
+            <br>
+            <textarea name="comentario" id="comentario" cols="30" rows="10">
+
+            </textarea>
+        </label>
+        <br>
+        <input type="button" name="ver_resultados" id="ver_resultados" value="Ver resultados">
+    </form>
+
+    <script type="text/javascript">
+        const btnResultados = document.getElementById("ver_resultados");
+
+        btnResultados.addEventListener('click', function() {
+            let nombre1 = document.getElementById("nombre").value;
+            let apellido = document.getElementById("apellido").value;
+            let email = document.getElementById("email").value;
+            let pais = document.getElementById("paises").value;
+            let comentario = document.getElementById("comentario").value;
+
+            let resultado = `Nombre: ${nombre} \n Apelllido: ${apellido} \n email: ${email} \n Edad: ${edad} \n Pais: ${paises} \n Comentario: ${comentario}`  ;
+
+            console.log("Presionaste el boton");
+            console.log(resultado);
+        });
+    </script>
+</body>
+</html>

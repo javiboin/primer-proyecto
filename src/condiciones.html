@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div id="resultado"></div>
+    </div>
+
+    <script type="text/javascript">
+        let poblacionARG = 45;
+
+        let poblacionCO = 50;
+
+        poblacionARG > poblacionCO ? console.log("si") : console.log("no");
+
+        /* EJERCICIO: IRSE DEL PAIS */
+        /* Definir preguntas en el navegador */
+        let pasaporte = confirm('¿Tienes pasaporte?');
+        let sinAntecedentes = confirm('¿Tienes antecedentes?');
+
+
+        /* Definir integración con HTML */
+        const cajaResultado = document.getElementById("resultado");
+        let respuesta;
+
+        /* Logica de Negociación */
+        if (pasaporte && !sinAntecedentes) {
+            respuesta = "puedes Viajar";
+        }else{
+            respuesta = "No puede viajar por el momento";   
+        };
+        cajaResultado.innerHTML = respuesta;
+
+        /* ELIJE TU FRUTA */
+        let fruta = prompt("Elije tu Fruta");
+
+        let cajaFruta = document.getElementById("fruta");
+        let mensajeFruta;
+
+        switch (fruta) {
+
+            case 'Naranja':
+                mensajeFruta = "La naranja vale $40";
+                break;
+            default:
+                console.log("no eligio nada");
+        };
+    </script>
+</body>
+</html>

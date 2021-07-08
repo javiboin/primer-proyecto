@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <form action="" method="GET">
+        <label for="">
+            <span>Número 1</span>
+            <input type="number" id="number1" name="number1" value="" placeholder="1er Número" required>
+        </label>
+        <br><br>
+        <label for="">
+            <span>Número 2</span>
+            <input type="number" id="number2" name="number2" value="" placeholder="2do Número" required>
+        </label>
+
+    <br><br>
+    <input type="button" name="ver_resultados+" id="ver_resultados+" value="+">
+    <input type="button" name="ver_resultados-" id="ver_resultados-" value="-">
+    <input type="button" name="ver_resultados*" id="ver_resultados*" value="x">
+    <input type="button" name="ver_resultados/" id="ver_resultados/" value="%">
+
+    </form>
+
+    <script type="text/javascript"> 
+        const btnResSum = document.getElementById("ver_resultados+");
+
+        btnResSum.addEventListener('click',function() {
+            /* console.log("suma"); */
+            console.log(parseInt(document.getElementById("number1").value,10) + parseInt(document.getElementById("number2").value , 10))
+        });
+
+        const btnResResta = document.getElementById("ver_resultados-");
+
+        btnResResta.addEventListener('click',function() {
+           /*  console.log("resta"); */
+            console.log(parseInt(document.getElementById("number1").value,10) - parseInt(document.getElementById("number2").value , 10))
+        });
+
+        const btnResMult = document.getElementById("ver_resultados*");
+
+        btnResMult.addEventListener('click',function() {
+            /* console.log("multiplicacion"); */
+            console.log(parseInt(document.getElementById("number1").value,10) * parseInt(document.getElementById("number2").value , 10))
+        });
+
+        const btnResDiv = document.getElementById("ver_resultados/");
+
+        btnResDiv.addEventListener('click',function() {
+            /* console.log("Division"); */
+            console.log(parseInt(document.getElementById("number1").value,10) / parseInt(document.getElementById("number2").value , 10))
+        });
+    </script>
+</body>
+</html>

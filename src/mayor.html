@@ -1,0 +1,41 @@
+<!DOCTYPE html> <!-- COMPARADOR DE NUMERO -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Clase 5</title>
+</head>
+<body>
+    <form action="" name="comparacion" method="GET">
+        <label for="">
+            <span>Número 1: </span>
+            <input type="number" id="numero1" name="numero1" value="0">
+        </label>
+        <br><br>
+        <label for="">
+            <span>Número 2: </span>
+            <input type="number" id="numero2" name="numero2" value="0">
+        </label>
+        <br><br>
+        <input type="button" name="comparar" id="comparar" value="¿Cual es Mayor?">
+    </form>
+
+    <script type="text/javascript">
+        const btnComparar = document.getElementById("comparar");
+
+        btnComparar.addEventListener('click', function(){
+            let numero1 = parseInt(document.getElementById('numero1').value, 10);
+            let numero2 = parseInt(document.getElementById('numero2').value, 10);
+
+            if (numero1 === numero2) {
+                console.log("Son iguales");
+            }else if(numero1 > numero2){
+                console.log("Numero 1 es mayo a NUmero 2");
+            }else {
+                console.log("Numero 2 es mayor a numero 1");
+            };
+        })
+    </script>
+</body>
+</html>
