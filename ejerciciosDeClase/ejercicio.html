@@ -10,22 +10,22 @@
     <h1>Puede Conducir</h1>
 
     <form action="">
-        <label for="">
+        <label for="nombre">
             <span>Nombre</span>
-            <input type="text" id="nombre" name="nombre">
+            <input type="text" id="nombre" name="nombre" autocomplete="name" required>
         </label>
         <br><br>
-        <label for="">
+        <label for="apellido">
             <span>Apellido</span>
-            <input type="text" id="apellido" name="apellido">
+            <input type="text" id="apellido" name="apellido" autocomplete="family-name" required>
         </label>
         <br><br>
-        <label for="">
-            <span>Dime tu edad</span>
-            <input type="number" id="edad" name="edad" value="0" required>
-        </label>
+        <label for="edad">
+            <span>Fecha de Nacimiento</span>
+            <input type="date" id="edad" name="edad">
+        </label> 
         <br><br>
-        <label for="">
+        <label for="licencia">
             <span>¿Tienes licencia de conducir? </span>
             <select name="licencia" id="licencia">
                 <option value="si">SI</option>
@@ -35,44 +35,44 @@
         <br><br>
         <label for="f_exp">
             <span>Fecha De Expiración</span>
-            <input type="date" id="f_exp" name="f_exp" placeholder="01/01/2010">
+            <input type="date" id="f_exp" name="f_exp">
         </label>
         <br><br>
         <input type="button" name="enviar" id="enviar" value="Resultado">
     </form>
 
     <script type="text/javascript">
+        document.getElementById('edad').valueAsDate = new Date();
         document.getElementById('f_exp').valueAsDate = new Date();
+        
         const btnResultado = document.getElementById("enviar");
 
         btnResultado.addEventListener('click', function(){
             let nombre = document.getElementById('nombre').value;
             let apellido = document.getElementById('apellido').value;
-            let edad = parseInt(document.getElementById('edad').value, 10);
+            let edad = new Date(document.getElementById('edad').value);
             let licencia = document.getElementById('licencia').value;
-            let f_exp = document.getElementById('f_exp').value;
+            let f_exp = new Date(document.getElementById('f_exp').value);
 
-            let edadMayor = 18;
-            
+            const edadMayor = 18;     
             const hoy = new Date();
-            let annio = hoy.getFullYear();
-            let mes = hoy.getMonth() + 1;
-            let dia = hoy.getDate();
 
-            if (mes.toString().length = 1) {
-                mes = "0" + mes.toString(); 
+            /* getFullYear valor numerico del año de esa fecha*/
+            let agnios = hoy.getFullYear() - edad.getFullYear(); 
+
+            edad.setFullYear(hoy.getFullYear()); 
+            /* detectar si la persona no ha cumplido un año,
+            Evita posible bug */
+
+            if (hoy < edad){
+                --agnios;
             };
+            console.log(agnios);
 
-            if (dia.toString().length = 1) {
-                dia = "0" + dia.toString(); 
-            }; 
-
-            let fecha = annio + "-" + mes +"-" + dia;
-
-            if (edad >= edadMayor && licencia === "si" && fecha <= f_exp) {
-                console.log(`Se Estima que sabe conducir `);
+            if (agnios >= edadMayor && licencia === "si" && f_exp > hoy) {
+                console.log(`El conductor ${nombre} ${apellido} se encuentra habilitado para conducir `);
             }else{
-                console.log(`No se encuentra Habilitado`);
+                console.log(`El conductor ${nombre} ${apellido} NO se encuentra habilitado para conducir`);
             };
 
 
